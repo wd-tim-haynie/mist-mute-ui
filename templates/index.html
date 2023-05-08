@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mist Mute Tool</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <h1>Mist Mute Tool</h1>
+
+    <h2>Active Mutes</h2>
+    <table id="active-mutes">
+        <thead>
+            <tr>
+                <th>Site</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+                <th>Mute Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- The active mutes will be displayed here -->
+        </tbody>
+    </table>
+
+    <h2>Add Mute</h2>
+    <form id="mute-form">
+        <label for="site-select">Select Site:</label>
+        <select id="site-select" name="id" required>
+            <!-- The site options will be populated here -->
+        </select>
+        <br>
+
+        <label for="mute-type">Mute Option:</label>
+        <select id="mute-type" name="mute_option" required>
+            <option value="immediately" selected>Mute Immediately</option>
+            <option value="schedule">Schedule Mute</option>
+        </select>
+        <br>
+
+        <div id="start-time-picker" style="display: none;">
+            <label for="start-time">Start Time:</label>
+            <input type="datetime-local" id="start-time" name="start_time">
+            <br>
+        </div>
+
+        <label for="duration">Hours to mute (0 to unmute):</label>
+        <input type="number" id="duration" name="duration" min="0" max="24" required>
+        <br>
+
+        <button type="submit">Add Mute</button>
+    </form>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>
